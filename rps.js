@@ -20,4 +20,4 @@ const getRandomChoice = (strings) => {
   return strings[choice];
 };
 
-const strings = ["Rock", "Paper", "Scissors"];
+const strings = ["rock", "paper", "scissors"];
