@@ -21,3 +21,30 @@ const getRandomChoice = (strings) => {
 };
 
 const strings = ["rock", "paper", "scissors"];
+
+
+// Player roll
+
+// const playerChoicePrompt = prompt("Choose between rock, paper and scissors");
+
+// const playerChoiceCheck = playerChoicePrompt.toLowerCase();
+// if (!strings.includes(playerChoiceCheck)) {
+//    alert("Choice can only be rock, paper or scissors!");
+// }
+
+
+const checkPlayerChoice = (strings) => {
+  let playerChoicePrompt;
+  let playerChoiceCheck;
+
+  do {
+    playerChoicePrompt = prompt("Choose between rock, paper, scissors");
+    playerChoiceCheck = playerChoicePrompt.toLowerCase();
+  } while (!strings.includes(playerChoiceCheck));
+
+  return playerChoiceCheck;
+};
+
+const getPlayerChoice = checkPlayerChoice(strings);
+console.log(getPlayerChoice);
+console.log(getRandomChoice(strings));
