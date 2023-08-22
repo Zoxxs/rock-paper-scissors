@@ -57,6 +57,7 @@ function decideOutcome (randomChoice, playerChoice) {
           gamePlayerWin();
           break;
       }
+      break;
     case "paper":
       switch (randomChoice){
         case "rock":
@@ -69,6 +70,7 @@ function decideOutcome (randomChoice, playerChoice) {
           gameComputerWin();
           break;
       }
+      break;
     case "scissors":
       switch (randomChoice) {
         case "rock":
@@ -81,6 +83,7 @@ function decideOutcome (randomChoice, playerChoice) {
           gameIsTied();
           break;
       }
+      break;
   }
 }
 
