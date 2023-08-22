@@ -25,14 +25,6 @@ const strings = ["rock", "paper", "scissors"];
 
 // Player roll
 
-// const playerChoicePrompt = prompt("Choose between rock, paper and scissors");
-
-// const playerChoiceCheck = playerChoicePrompt.toLowerCase();
-// if (!strings.includes(playerChoiceCheck)) {
-//    alert("Choice can only be rock, paper or scissors!");
-// }
-
-
 const checkPlayerChoice = (strings) => {
   let playerChoicePrompt;
   let playerChoiceCheck;
@@ -46,5 +38,61 @@ const checkPlayerChoice = (strings) => {
 };
 
 const getPlayerChoice = checkPlayerChoice(strings);
-console.log(getPlayerChoice);
-console.log(getRandomChoice(strings));
+
+
+// Play RPS
+
+function decideOutcome (randomChoice, playerChoice) {
+  switch (playerChoice) {
+    case "rock":
+      switch (randomChoice){
+        case "rock":
+          gameIsTied();
+          break;
+        case "paper":
+          gameComputerWin();
+          break;
+        case "scissors":
+          gamePlayerWin();
+          break;
+      }
+    case "paper":
+      switch (randomChoice){
+        case "rock":
+          gamePlayerWin();
+          break;
+        case "paper":
+          gameIsTied();
+          break;
+        case "scissors":
+          gameComputerWin();
+          break;
+      }
+    case "scissors":
+      switch (randomChoice) {
+        case "rock":
+          gameComputerWin();
+          break;
+        case "paper":
+          gamePlayerWin();
+          break;
+        case "scissors":
+          gameIsTied();
+          break;
+      }
+  }
+}
+
+function gameIsTied () {
+  console.log("Game is tied!");
+}
+
+function gamePlayerWin () {
+  console.log("Player win!");
+}
+
+function gameComputerWin () {
+  console.log("Computer Win!");
+}
+
+let playRound = decideOutcome(getComputerChoice, getPlayerChoice);
