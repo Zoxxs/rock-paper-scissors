@@ -21,6 +21,7 @@ const getRandomChoice = (strings) => {
 };
 
 const strings = ["rock", "paper", "scissors"];
+const getComputerChoice = getRandomChoice(strings);
 
 
 // Player roll
