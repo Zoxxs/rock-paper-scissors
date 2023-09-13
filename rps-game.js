@@ -45,10 +45,12 @@ function playRound(playerSelection, computerSelection) {
 
 function isGameOver(playerScore, computerScore) {
   if (playerScore === 5) {
+    winnerMessage.textContent = `Player wins the game!`;
     console.log(`Player wins the game!`);
     resetGame();
   }
   if (computerScore === 5) {
+    winnerMessage.textContent = `Computer wins the game!`;
     console.log(`Computer wins the game!`);
     resetGame();
   }
@@ -64,19 +66,21 @@ function resetGame() {
 const rockPlayerChoice = document.querySelector(`#rock`);
 const paperPlayerChoice = document.querySelector(`#paper`);
 const scissorsPlayerChoice = document.querySelector(`#scissors`);
+const score = document.querySelector(`#score`);
+const winnerMessage = document.querySelector(`#winnerMessage`);
 
 rockPlayerChoice.addEventListener(`click`, () => {
   choice = `rock`;
   playRound();
-  console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
+  score.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
 });
 paperPlayerChoice.addEventListener(`click`, () => {
   choice = `paper`;
   playRound();
-console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
+  score.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
 });
 scissorsPlayerChoice.addEventListener(`click`, () => {
   choice = `scissors`;
   playRound();
-  console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
+  score.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
 });
